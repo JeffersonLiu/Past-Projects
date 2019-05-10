@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.*;
+public class StudentMarks
+{
+  public static void main (String[] main)
+  {
+    ArrayList<String> nameWMarks = new ArrayList<String>();
+    int z = 0;
+    int minIndex;
+    String temp;
+    try {
+      Scanner s = new Scanner(new File("A7-1.txt"));//File
+      while (s.hasNext()){
+        String nameTemp, markTemp;
+        nameTemp = s.nextLine();
+        markTemp = s.nextLine();
+        nameWMarks.add(z,nameTemp+"     " + markTemp);
+        
+        z++;
+      }
+      s.close();//Closes file
+    }
+    catch(FileNotFoundException e) {System.out.println("There is no file by that name");}
+    int size = nameWMarks.size();
+    
+    for(int x = 0; x < size; x++) {//Printing in columns with no sorting
+      System.out.println(nameWMarks.get(x));
+    }
+
+    for (int i = 0; i < size; i++){ //Selection sort
+      minIndex = i;
+      for (int j = i +1; j < size; j++){
+        if (nameWMarks.get(j).compareTo(nameWMarks.get(minIndex)) < 0){
+          minIndex = j;
+        }
+      }
+      if (minIndex !=i){
+        temp = nameWMarks.get(i);
+        nameWMarks.set(i,nameWMarks.get(minIndex));
+        nameWMarks.set(minIndex,temp);
+      }
+    }
+        
+    System.out.println();
+    
+    for(int x = 0; x < size; x++) {//Printing in columns with alphabetical sorting
+      System.out.println(nameWMarks.get(x));
+    }
+    
+    for (int i = 0; i < size; i++){ //Selection sort
+      minIndex = i;
+      for (int j = i +1; j < size; j++){
+        if (Integer.parseInt (nameWMarks.get(j).substring (nameWMarks.get(j).length()-2)) > Integer.parseInt (nameWMarks.get(minIndex).substring (nameWMarks.get(minIndex).length()-2))){
+          minIndex = j;
+        }
+      }
+      if (minIndex !=i){
+        temp = nameWMarks.get(i);
+        nameWMarks.set(i,nameWMarks.get(minIndex));
+        nameWMarks.set(minIndex,temp);
+      }
+    }
+
+    System.out.println();
+    for(int x = 0; x < size; x++) {//Printing in columns with numerical sorting
+      System.out.println(nameWMarks.get(x));
+    }
+  }
+}

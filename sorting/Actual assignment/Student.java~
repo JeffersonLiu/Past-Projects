@@ -1,0 +1,12 @@
+class Student{
+  String number;
+  String name;
+  Locker myLocker;
+  Jacket myJacket;
+  Book books[];
+  Student (String name){
+    this.name=name;
+  }
+  void sentToOffice(String reason){
+    System.out.println("The reason is " + reason);
+    

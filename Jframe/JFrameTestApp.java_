@@ -1,0 +1,14 @@
+/**
+ * Auto Generated Java Class.
+ */
+public class JFrameTestApp {
+  
+  
+  public static void main(String[] args) { 
+    new JFrameTest ();       // Create a FrameTest frame
+    
+  }
+  
+  /* ADD YOUR CODE HERE */
+  
+}

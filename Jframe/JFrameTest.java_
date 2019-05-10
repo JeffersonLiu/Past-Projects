@@ -1,0 +1,28 @@
+import javax.swing.*;
+/**
+ * Auto Generated Java Class.
+ */
+public class JFrameTest extends JFrame {
+  
+  public JFrameTest() { 
+    super ("JFrame Test");
+    
+    JMenuItem quitItem = new JMenuItem ("Quit");
+    
+    JMenu fileMenu = new JMenu ("File");
+    
+    fileMenu.add (quitItem);
+    
+    JMenuBar myMenus = new JMenuBar ();
+    
+    myMenus.add (fileMenu);
+    
+    setJMenuBar (myMenus);
+    
+    setSize (400, 400);
+    setVisible (true);
+    
+    setDefaultCloseOperation (JFrame.DISPOSE_ON_CLOSE);  }
+  /* ADD YOUR CODE HERE */
+  
+}

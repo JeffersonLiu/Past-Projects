@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20140826-r5761">
+  <project autorefresh="false" build="bin/" root="src/" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="JFrameTest.java" package="" timestamp="28-Jan-2015 14:08:18">
+        <select from="1065" to="1065"/>
+        <scroll column="200" row="0"/>
+      </file>
+      <file name="JFrameTestApp.java" package="" timestamp="28-Jan-2015 13:55:34">
+        <select from="1065" to="1065"/>
+        <scroll column="200" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

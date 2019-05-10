@@ -1,0 +1,23 @@
+public class MazeSolver {
+
+    // The outer edge of the maze, or the exit.
+    final int END = 5;
+
+    boolean solveMaze(int maze[][], int row, int column) {
+        return  (row == END - 1 && column == END - 1) || ((row >= 0 && row < END && column >= 0 && column < END && maze[row][column] == 0)  && (solveMaze(maze, row + 1, column) || solveMaze(maze, row, column + 1)));
+    }
+
+    public static void main(String[] args) {
+        MazeTraverse m = new MazeTraverse();
+        // Initialize the maze
+        int maze[][] = {
+        { 0, 0, 0, 0, 1 },
+        { 1, 0, 1, 1, 1 },
+        { 0, 0, 0, 1, 1 },
+        { 1, 1, 0, 0, 0 },
+        { 1, 1, 1, 1, 0 } };
+
+        // Start the maze exit finder.
+        System.out.println(m.solveMaze(maze, 0, 0));
+    }
+}

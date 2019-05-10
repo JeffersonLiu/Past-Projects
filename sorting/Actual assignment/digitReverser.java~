@@ -1,0 +1,18 @@
+import java.util.*;
+public class digitReverser
+{
+  public static int revDigits (int integ){
+    return digitReverse(integ % );
+  }
+  public static void main (String[] main)
+  {
+    Scanner s = new Scanner(System.in);
+    String str = "";
+    String tem = "";
+    while (!tem.equals(".")){
+      tem= s.next();
+      str += "\n" + tem;
+    }
+    System.out.println(digitReverse(str));
+  }
+}

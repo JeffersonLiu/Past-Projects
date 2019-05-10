@@ -1,0 +1,45 @@
+class ClassRoom{
+  String course;
+  String teacher;
+  ClassRoom(String course, String teacher){
+    this.course = course;
+    this.teacher = teacher;
+  }
+  
+  public boolean enter (Student me)
+  {
+    System.out.println ("Student: " + me.name + ".");
+    System.out.println (me.name + " came to class " + course + " taught by " + teacher + ".");
+    if (!me.myLocker.owner.number.equals (me.number))
+    {
+      me.sentToOffice ("they do not have a locker");
+      me.myLocker.owner = me;
+      me.books.add (me.myLocker.getABook (course));
+      me.myLocker.putJacket (me.myJacket);
+      return false;
+    }
+    else if (me.myLocker.getJacket () == null)
+    {
+      me.myLocker.putJacket (me.myJacket);
+      System.out.println (me.name + " was sent to their locker to put away their jacket.");
+      me.myLocker.putJacket (me.myJacket);
+      return false;
+    }
+    else if (me.books.size () != 1)
+    {
+      me.sentToOffice ("not bringing the right number of books to the class");
+      me.books = new ArrayList<Book>();
+      me.books.add (me.myLocker.getABook (course));
+      return false;
+    }
+    else if (!me.books.get (0).course.equals (course))
+    {
+      me.sentToOffice ("not bringing the right books to the class");
+      me.books.remove (0);
+      me.books.add (me.myLocker.getABook (course));
+      return false;
+    }
+    System.out.println (me.name + " was allowed into the class.");
+    return true;
+  }
+}

@@ -1,0 +1,18 @@
+public class factorial
+{
+  public static long factorial(int n){
+    long fact;
+    if n(== 0)
+    {
+      fact = 1;
+    }
+    else{
+      fact = n * factorial (n-1);
+    }
+    return fact;
+  }
+  public static void main (String[] main)
+  {
+    System.out.println(factorial(3));
+  }
+}
